@@ -23,11 +23,11 @@
             </div>
             <div class="">
                 <label class="form-label" for="pprice">Price</label>
-                <input type="number" id="pprice" class="form-control" placeholder="Must be greater than 0.00" name='productPrice' required/>
+                <input type="text" id="pprice" class="form-control" placeholder="Must be greater than 0.00" name='productPrice' required/>
             </div>                
             <div class="">
                 <label class="form-label" for="pquantity">Quantity</label>
-                <input type="number" id="pquantity" class="form-control" placeholder="Must be greater than 0" name='productQuantity' required/>
+                <input type="text" id="pquantity" class="form-control" placeholder="Must be greater than 0" name='productQuantity' required/>
             </div>
         </div>
 
