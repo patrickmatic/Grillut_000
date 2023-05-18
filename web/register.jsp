@@ -96,7 +96,7 @@
             </form>
 
             <script>
-                var charactersonly = /^[A-Za-z]+$/;
+                var charactersonly = /^[A-Za-z\s]+$/;
 
                 function formValidation() {
                     var registerFirstName = $("#registerFirstName").val();

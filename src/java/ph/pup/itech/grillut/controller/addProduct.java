@@ -23,22 +23,23 @@ public class addProduct extends HttpServlet {
         String productSize = request.getParameter("productSize");
         String productPrice = request.getParameter("productPrice");
         String productQuantity = request.getParameter("productQuantity");
-        
+
         request.setAttribute("productName", productName);
         request.setAttribute("productID", productID);
         request.setAttribute("productDescription", productDescription);
         request.setAttribute("productSize", productSize);
-        request.setAttribute("productPrice", productPrice);
+
+        double price = Double.parseDouble(productPrice);
+        request.setAttribute("productPrice", price);
+
         request.setAttribute("productQuantity", productQuantity);
 
         System.out.println(productName + " with " + productID + " has been added to inventory.");
 
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/products.jsp");
         rd.forward(request, response);
-        
+
         request.setAttribute("productAdded", true);
-        
-        
 //        response.getWriter().println(productName + " with " + productID + " has been added to inventory.");
     }
 

@@ -35,7 +35,7 @@
         <!--        <button type="submit" class="btn btn-primary btn-block mb-3 col-12">Save</button>-->
 
         <script>
-            var charactersonly = /^[A-Za-z]+$/;
+            var charactersonly = /^[A-Za-z\s]+$/;
 
             function formValidation() {
                 var PID = $("#PID").val();
