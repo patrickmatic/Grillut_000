@@ -55,7 +55,7 @@
                             <th>Quantity</th>
                         </tr>
                     </thead>
-                    <tbody id='productList' class="mb-3" style='height: 25vh;'>
+                    <tbody id='productList' class="mb-3" style='height: 45vh;'>
                         <tr>
                             <td>${productID}</td>
                             <td>${productName}</td>
