@@ -1,0 +1,181 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+
+$primary: #d54000;
+$theme-colors: (
+  primary: #d54000
+);
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+
+*{
+  padding: 0;
+  margin:  0;
+  box-sizing: border-box;
+  font-family:'Archivo Black' , sans-serif;
+  scroll-behavior: smooth;
+}
+
+
+.title{
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    width: 100%;
+/*    overflow: hidden;*/
+}
+
+.title video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title h1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 15vw;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    color: #000;
+    mix-blend-mode: screen;
+    text-align: center;
+    line-height: 0.5em;
+}
+
+.title h1 span{
+    font-size: 3vw;
+}
+
+.about_us{
+    position: relative;
+    color: white;
+}
+
+.about_text{
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    background-color: #d64000;
+    text-transform: uppercase;
+}
+
+.about_text div{
+}
+
+@media only screen and (max-width: 766px) {
+  .about_text {
+    position: relative;
+    margin-top: 25%;
+    padding-top: 35%;
+    border-radius: .4rem
+  }
+  .about_img{
+      position: absolute;
+      top: 0;
+  }
+  
+  .landing_invite{
+      text-align: justified;
+  }
+}
+
+.about_img{
+/*    position: absolute;*/
+    z-index: 99;
+}
+
+
+.title h2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 5vw;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    color: #000;
+    mix-blend-mode: screen;
+    text-align: center;
+    line-height: 0.5em;
+}
+
+.login{
+    text-align: center;
+    color: #d64000;
+    height: 100vh;
+}
+
+.register{
+    height: 100vh;
+}
+
+@media only screen and (max-width: 766px){
+.register{
+    height: auto;
+}
+}
+
+@media only screen and (max-height: 450px){
+.login{
+    height: auto;
+}
+.register{
+    height: auto;
+}
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg);}
+    to { transform: rotate(360deg);}
+}
+.spinning {
+    animation: spin 60s infinite linear;
+}
+
+
+.nav_link{
+    position: relative;
+}
+
+.nav_link :hover{
+    text-decoration: underline;
+    border-bottom: 2px solid #d64000;
+}
+.nav_link ::after{
+    content: '';
+    opacity: 0;
+    transition: all 0.2s;
+    height: 2px;
+    width: 100%;
+    background-color: #d64000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.nav_link :hover::after{
+    opacity: 1;
+}
+
+.btn_all{
+    border-radius: 15px 50px; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
