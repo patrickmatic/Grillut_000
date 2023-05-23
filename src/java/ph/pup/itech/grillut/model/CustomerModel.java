@@ -59,7 +59,7 @@ public class CustomerModel {
         this.productSize = productSize;
     }
 
-    public double productPrice() {
+    public double getproductPrice() {
         return productPrice;
     }
 
@@ -67,7 +67,7 @@ public class CustomerModel {
         this.productPrice = productPrice;
     }
 
-    public int productQuantity() {
+    public int getproductQuantity() {
         return productQuantity;
     }
 
