@@ -10,52 +10,69 @@ package ph.pup.itech.grillut.model;
  */
 public class CustomerModel {
 
-    private int customerId;
-    private String firstName;
-    private String middleName;
-    private String lastName;
+    private int productID;
+    private String productName;
+    private String productDescription;
+    private String productSize;
+    private double productPrice;
+    private int productQuantity;
 
     public CustomerModel(
-            int employeeId,
-            String firstName,
-            String middleName,
-            String lastName) {
-        this.customerId = employeeId;
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
+            int productID, String productName, String productDescription, String productSize, double productPrice, int productQuantity) {
+        this.productID = productID;
+        this.productName = productName;
+        this.productDescription = productDescription;
+        this.productSize = productSize;
+        this.productPrice = productPrice;
+        this.productQuantity = productQuantity;
     }
 
-    public int getCustomerId() {
-        return customerId;
+    public int getproductID() {
+        return productID;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public void setproductID(int productID) {
+        this.productID = productID;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getproductName() {
+        return productName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setproductName(String productName) {
+        this.productName = productName;
     }
 
-    public String getMiddleName() {
-        return middleName;
+    public String getproductDescription() {
+        return productDescription;
     }
 
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
+    public void setproductDescription(String productDescription) {
+        this.productDescription = productDescription;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getproductSize() {
+        return productSize;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setproductSize(String productSize) {
+        this.productSize = productSize;
+    }
+
+    public double productPrice() {
+        return productPrice;
+    }
+
+    public void setproductPrice(double productPrice) {
+        this.productPrice = productPrice;
+    }
+
+    public int productQuantity() {
+        return productQuantity;
+    }
+
+    public void setproductQuantity(int productQuantity) {
+        this.productQuantity = productQuantity;
     }
 
 }

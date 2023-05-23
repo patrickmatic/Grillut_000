@@ -10,6 +10,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import ph.pup.itech.grillut.model.CustomerModel;
+import ph.pup.itech.grillut.dao.CustomerDao;
 
 public class addProduct extends HttpServlet {
 

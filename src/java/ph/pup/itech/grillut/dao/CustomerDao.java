@@ -12,20 +12,32 @@ import ph.pup.itech.grillut.model.CustomerModel;
  */
 public class CustomerDao {
 
-    public CustomerModel getCustomerDetails(CustomerModel employee) {
+    public CustomerModel getCustomerDetails(CustomerModel customer) {
         CustomerModel cusDetails;
-        int customerId = employee.getCustomerId();
-        String firstName = employee.getFirstName();
-        String middleName = employee.getMiddleName();
-        String lastName = employee.getLastName();
-        cusDetails = new CustomerModel(customerId, firstName, middleName, lastName);
-        System.out.println("cusDetails: " + cusDetails);
+        int productID = customer.getproductID();
+        String productName = customer.getproductName();
+        String productDescription = customer.getproductDescription();
+        String productSize = customer.getproductSize();
+        double productPrice = customer.getproductPrice();
+        int productQuantity = customer.getproductQuantity();
+        cusDetails = new CustomerModel(productID, productName, productDescription, productSize, productPrice, productQuantity);
+        System.out.println("Customer Details: " + cusDetails);
         return cusDetails;
     }
 
-    public String getCustomerId() {
-        String employeeId = null;
-        return employeeId;
+    public String getproductID() {
+        String productID = null;
+        return productID;
+    }
+    
+    public String getproductPrice() {
+        String productPrice = null;
+        return productPrice;
+    }
+    
+        public String getproductQuantity() {
+        String productQuantity = null;
+        return productQuantity;
     }
 
 }
