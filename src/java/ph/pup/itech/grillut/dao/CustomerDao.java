@@ -25,19 +25,4 @@ public class CustomerDao {
         return cusDetails;
     }
 
-    public String getproductID() {
-        String productID = null;
-        return productID;
-    }
-    
-    public String getproductPrice() {
-        String productPrice = null;
-        return productPrice;
-    }
-    
-        public String getproductQuantity() {
-        String productQuantity = null;
-        return productQuantity;
-    }
-
 }

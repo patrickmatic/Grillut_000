@@ -4,6 +4,7 @@
     Author     : Matic
 --%>
 
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -39,10 +40,13 @@
                 <button type="submit" class="btn btn-primary">SEARCH</button>
             </form>
         </div>
+        
+       
 
         <section class="d-flex container-lg justify-content-center">
             <!-- Table List -->
             <div class="container mt-5">
+                <p class='text-center'><c:out value="${message}"/></p>
                 <h2 class="text-center">Product List</h2>
                 <table id="productTable" class="table">
                     <thead>
@@ -57,12 +61,12 @@
                     </thead>
                     <tbody id='productList' class="mb-3" style='height: 45vh;'>
                         <tr>
-                            <td>${productID}</td>
-                            <td>${productName}</td>
-                            <td>${productDescription}</td>
-                            <td>${productSize}</td>
-                            <td>${productPrice}</td>
-                            <td>${productQuantity}</td>
+                            <td><c:out value="${customer.productID}"/></td>
+                            <td><c:out value="${customer.productName}"/></td>
+                            <td><c:out value="${customer.productDescription}"/></td>
+                            <td><c:out value="${customer.productSize}"/></td>
+                            <td><c:out value="${customer.productPrice}"/></td>
+                            <td><c:out value="${customer.productQuantity}"/></td>
                         </tr>
                         <!-- Add table rows dynamically using JavaScript or server-side code -->
                     </tbody>
@@ -92,16 +96,10 @@
                 </div>
             </div>
         </div>
-
-<!--        <script>
-            if(${productAdded == 'true'}){
-              alert(${productName} + " with " + ${productID} + " has been added to inventory.");
-            }
-        </script>-->
     </div>
 
 
-
+    
     <jsp:include page="footer.jsp"/>
     <script src = "js/bootstrap.bundle.min.js" ></script>
 </body>

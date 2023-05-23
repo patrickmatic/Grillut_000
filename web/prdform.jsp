@@ -80,7 +80,7 @@
                 }
 
                 // Input fields validated
-                alert(PN + " with " + PID + " has been added to inventory.");
+//                alert(PN + " with " + PID + " has been added to inventory.");
                 return true;
             }
         </script>

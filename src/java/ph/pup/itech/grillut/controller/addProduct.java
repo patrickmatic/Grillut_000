@@ -18,31 +18,7 @@ public class addProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        String productName = request.getParameter("productName");
-        String productID = request.getParameter("productID");
-        String productDescription = request.getParameter("productDescription");
-        String productSize = request.getParameter("productSize");
-        String productPrice = request.getParameter("productPrice");
-        String productQuantity = request.getParameter("productQuantity");
-
-        request.setAttribute("productName", productName);
-        request.setAttribute("productID", productID);
-        request.setAttribute("productDescription", productDescription);
-        request.setAttribute("productSize", productSize);
-
-        double price = Double.parseDouble(productPrice);
-        request.setAttribute("productPrice", price);
-
-        request.setAttribute("productQuantity", productQuantity);
-
-        System.out.println(productName + " with " + productID + " has been added to inventory.");
-
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/products.jsp");
-        rd.forward(request, response);
-
-        request.setAttribute("productAdded", true);
-//        response.getWriter().println(productName + " with " + productID + " has been added to inventory.");
+        getCustomer(request, response);
     }
 
     @Override
@@ -51,46 +27,25 @@ public class addProduct extends HttpServlet {
         doGet(request, response);
     }
 
-    public class Customer extends HttpServlet {
+    private void getCustomer(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        int productID = Integer.parseInt(request.getParameter("productID"));
+        String productName = request.getParameter("productName");
+        String productDescription = request.getParameter("productDescription");
+        String productSize = request.getParameter("productSize");
+        double productPrice = Double.parseDouble(request.getParameter("productPrice"));
+        int productQuantity = Integer.parseInt(request.getParameter("productQuantity"));
 
-        @Override
-        protected void doGet(HttpServletRequest request, HttpServletResponse response)
-                throws ServletException, IOException {
-            String action = request.getServletPath();
-            switch (action) {
-                case "/customer/add":
-                    getCustomer(request, response);
-                    break;
-                default:
-                    showCustomerForm(request, response);
-                    break;
-            }
-        }
-
-        private void getCustomer(HttpServletRequest request, HttpServletResponse response)
-                throws ServletException, IOException {
-            int productID = Integer.parseInt(request.getParameter("productID"));
-            String productName = request.getParameter("productName");
-            String productDescription = request.getParameter("productDescription");
-            String productSize = request.getParameter("productSize");
-            double productPrice = Double.parseDouble(request.getParameter("productPrice"));
-            int productQuantity = Integer.parseInt(request.getParameter("productQuantity"));
-
-            CustomerModel customer = new CustomerModel(
-                    productID, productName, productDescription, productSize, productPrice, productQuantity);
-            CustomerDao customerDao = new CustomerDao();
-            CustomerModel getCustomer = customerDao.getCustomerDetails(customer);
-            request.setAttribute("customer", getCustomer);
-            RequestDispatcher rd = getServletContext().getRequestDispatcher(
-                    "pdrform.jsp");
-            rd.forward(request, response);
-        }
-
-        private void showCustomerForm(HttpServletRequest request, HttpServletResponse response)
-                throws ServletException, IOException {
-            RequestDispatcher rd = getServletContext().getRequestDispatcher(
-                    "/prdformm.jsp");
-            rd.forward(request, response);
-        }
+        CustomerModel customer = new CustomerModel(
+                productID, productName, productDescription, productSize, productPrice, productQuantity);
+        CustomerDao customerDao = new CustomerDao();
+        CustomerModel getCustomer = customerDao.getCustomerDetails(customer);
+        
+        String message = getCustomer.productName + " with " + getCustomer.productID + " has been added to inventory.";
+        
+        request.setAttribute("customer", getCustomer);
+        request.setAttribute("message", message);
+        RequestDispatcher rd = getServletContext().getRequestDispatcher("/products.jsp");
+        rd.forward(request, response);
     }
 }
