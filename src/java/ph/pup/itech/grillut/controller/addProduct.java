@@ -50,4 +50,47 @@ public class addProduct extends HttpServlet {
             throws ServletException, IOException {
         doGet(request, response);
     }
+
+    public class Customer extends HttpServlet {
+
+        @Override
+        protected void doGet(HttpServletRequest request, HttpServletResponse response)
+                throws ServletException, IOException {
+            String action = request.getServletPath();
+            switch (action) {
+                case "/customer/add":
+                    getCustomer(request, response);
+                    break;
+                default:
+                    showCustomerForm(request, response);
+                    break;
+            }
+        }
+
+        private void getCustomer(HttpServletRequest request, HttpServletResponse response)
+                throws ServletException, IOException {
+            int productID = Integer.parseInt(request.getParameter("productID"));
+            String productName = request.getParameter("productName");
+            String productDescription = request.getParameter("productDescription");
+            String productSize = request.getParameter("productSize");
+            double productPrice = Double.parseDouble(request.getParameter("productPrice"));
+            int productQuantity = Integer.parseInt(request.getParameter("productQuantity"));
+
+            CustomerModel customer = new CustomerModel(
+                    productID, productName, productDescription, productSize, productPrice, productQuantity);
+            CustomerDao customerDao = new CustomerDao();
+            CustomerModel getCustomer = customerDao.getCustomerDetails(customer);
+            request.setAttribute("customer", getCustomer);
+            RequestDispatcher rd = getServletContext().getRequestDispatcher(
+                    "pdrform.jsp");
+            rd.forward(request, response);
+        }
+
+        private void showCustomerForm(HttpServletRequest request, HttpServletResponse response)
+                throws ServletException, IOException {
+            RequestDispatcher rd = getServletContext().getRequestDispatcher(
+                    "/prdformm.jsp");
+            rd.forward(request, response);
+        }
+    }
 }
