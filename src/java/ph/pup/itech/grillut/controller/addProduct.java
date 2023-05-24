@@ -38,12 +38,12 @@ public class addProduct extends HttpServlet {
 
         ProductModel prd = new ProductModel(
                 productID, productName, productDescription, productSize, productPrice, productQuantity);
-        ProductDao customerDao = new ProductDao();
-        ProductModel getProduct = customerDao.getProductDetails(prd);
+        ProductDao productDao = new ProductDao();
+        ProductModel getProduct = productDao.getProductDetails(prd);
         
         String message = getProduct.productName + " with " + getProduct.productID + " has been added to inventory.";
         
-        request.setAttribute("customer", getProduct);
+        request.setAttribute("product", getProduct);
         request.setAttribute("message", message);
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/products.jsp");
         rd.forward(request, response);
