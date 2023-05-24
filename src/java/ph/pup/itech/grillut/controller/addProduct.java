@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.text.DecimalFormat;
 import ph.pup.itech.grillut.model.ProductModel;
 import ph.pup.itech.grillut.dao.ProductDao;
 
@@ -27,25 +28,31 @@ public class addProduct extends HttpServlet {
         doGet(request, response);
     }
 
-    private void getProduct(HttpServletRequest request, HttpServletResponse response)
+private void getProduct(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int productID = Integer.parseInt(request.getParameter("productID"));
-        String productName = request.getParameter("productName");
-        String productDescription = request.getParameter("productDescription");
-        String productSize = request.getParameter("productSize");
-        var productPrice = Double.parseDouble(request.getParameter("productPrice"));
-        int productQuantity = Integer.parseInt(request.getParameter("productQuantity"));
+    int productID = Integer.parseInt(request.getParameter("productID"));
+    String productName = request.getParameter("productName");
+    String productDescription = request.getParameter("productDescription");
+    String productSize = request.getParameter("productSize");
+    double productPrice = Double.parseDouble(request.getParameter("productPrice"));
+    int productQuantity = Integer.parseInt(request.getParameter("productQuantity"));
 
-        ProductModel prd = new ProductModel(
-                productID, productName, productDescription, productSize, productPrice, productQuantity);
-        ProductDao productDao = new ProductDao();
-        ProductModel getProduct = productDao.getProductDetails(prd);
-        
-        String message = getProduct.productName + " with " + getProduct.productID + " has been added to inventory.";
-        
-        request.setAttribute("product", getProduct);
-        request.setAttribute("message", message);
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/products.jsp");
-        rd.forward(request, response);
-    }
+    ProductModel prd = new ProductModel(
+            productID, productName, productDescription, productSize, productPrice, productQuantity);
+
+    ProductDao productDao = new ProductDao();
+    ProductModel getProduct = productDao.getProductDetails(prd);
+    getProduct.setProductPrice(productPrice);
+    
+    DecimalFormat decimalFormat = new DecimalFormat("0.00");
+    String formattedPrice = decimalFormat.format(getProduct.getProductPrice());
+
+    String message = getProduct.getproductName() + " with " + getProduct.getproductID() + " has been added to inventory.";
+
+    request.setAttribute("product", getProduct);
+    request.setAttribute("message", message);
+    request.setAttribute("formattedPrice", formattedPrice);
+    RequestDispatcher rd = getServletContext().getRequestDispatcher("/products.jsp");
+    rd.forward(request, response);
+}
 }

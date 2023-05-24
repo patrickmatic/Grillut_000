@@ -12,17 +12,17 @@ import ph.pup.itech.grillut.model.ProductModel;
  */
 public class ProductDao {
 
-    public ProductModel getProductDetails(ProductModel product) {
-        ProductModel prdDetails;
-        int productID = product.getproductID();
-        String productName = product.getproductName();
-        String productDescription = product.getproductDescription();
-        String productSize = product.getproductSize();
-        double productPrice = product.getproductPrice();
-        int productQuantity = product.getproductQuantity();
-        prdDetails = new ProductModel(productID, productName, productDescription, productSize, productPrice, productQuantity);
-        System.out.println("Customer Details: " + prdDetails);
-        return prdDetails;
-    }
+public ProductModel getProductDetails(ProductModel product) {
+    ProductModel prdDetails;
+    int productID = product.getproductID();
+    String productName = product.getproductName();
+    String productDescription = product.getproductDescription();
+    String productSize = product.getproductSize();
+    double productPrice = product.getProductPrice();
+    int productQuantity = product.getproductQuantity();
+    prdDetails = new ProductModel(productID, productName, productDescription, productSize, productPrice, productQuantity);
+    System.out.println("Product Details: " + prdDetails);
+    return prdDetails;
+}
 
 }

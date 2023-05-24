@@ -59,11 +59,11 @@ public class ProductModel {
         this.productSize = productSize;
     }
 
-    public double getproductPrice() {
+    public double getProductPrice() {
         return productPrice;
     }
 
-    public void setproductPrice(double productPrice) {
+    public void setProductPrice(double productPrice) {
         this.productPrice = productPrice;
     }
 
