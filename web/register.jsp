@@ -81,8 +81,6 @@
                         <label class="form-label" for="registerNumber">Mobile Number</label>
                         <input type="number" id="registerNumber" class="form-control" placeholder="11-digit numbers only." required/>
                     </div>
-
-
                 </div>
 
 

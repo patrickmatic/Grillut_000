@@ -4,6 +4,11 @@
  */
 package ph.pup.itech.grillut.model;
 
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+
 /**
  *
  * @author Ze Familee
@@ -23,7 +28,8 @@ public class ProductModel {
         this.productName = productName;
         this.productDescription = productDescription;
         this.productSize = productSize;
-        this.productPrice = productPrice;
+        BigDecimal bd = new BigDecimal(productPrice).setScale(2, RoundingMode.HALF_UP);
+        this.productPrice = bd.doubleValue();
         this.productQuantity = productQuantity;
     }
 
@@ -59,11 +65,11 @@ public class ProductModel {
         this.productSize = productSize;
     }
 
-    public double getProductPrice() {
+    public double getproductPrice() {
         return productPrice;
     }
 
-    public void setProductPrice(double productPrice) {
+    public void setproductPrice(double productPrice) {
         this.productPrice = productPrice;
     }
 

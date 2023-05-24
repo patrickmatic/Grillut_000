@@ -18,7 +18,7 @@ public ProductModel getProductDetails(ProductModel product) {
     String productName = product.getproductName();
     String productDescription = product.getproductDescription();
     String productSize = product.getproductSize();
-    double productPrice = product.getProductPrice();
+    double productPrice = product.getproductPrice();
     int productQuantity = product.getproductQuantity();
     prdDetails = new ProductModel(productID, productName, productDescription, productSize, productPrice, productQuantity);
     System.out.println("Product Details: " + prdDetails);

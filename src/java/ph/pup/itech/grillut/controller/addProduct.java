@@ -10,7 +10,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.text.DecimalFormat;
 import ph.pup.itech.grillut.model.ProductModel;
 import ph.pup.itech.grillut.dao.ProductDao;
 
@@ -42,16 +41,11 @@ private void getProduct(HttpServletRequest request, HttpServletResponse response
 
     ProductDao productDao = new ProductDao();
     ProductModel getProduct = productDao.getProductDetails(prd);
-    getProduct.setProductPrice(productPrice);
-    
-    DecimalFormat decimalFormat = new DecimalFormat("0.00");
-    String formattedPrice = decimalFormat.format(getProduct.getProductPrice());
 
     String message = getProduct.getproductName() + " with " + getProduct.getproductID() + " has been added to inventory.";
 
     request.setAttribute("product", getProduct);
     request.setAttribute("message", message);
-    request.setAttribute("formattedPrice", formattedPrice);
     RequestDispatcher rd = getServletContext().getRequestDispatcher("/products.jsp");
     rd.forward(request, response);
 }
