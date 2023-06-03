@@ -47,8 +47,8 @@
 
                 <!-- Username input -->
                 <div class="form-outline mb-2">
-                    <label class="form-label" for="registerUsername">Username</label>
-                    <input type="text" id="registerUsername" class="form-control" placeholder="Minimum of 4, maximum of 12" required/>
+                    <label class="form-label" for="registerUsername">Preferred Username</label>
+                    <input type="text" id="registerUsername" class="form-control" placeholder="Minimum of 4, maximum of 5" required/>
                 </div>
 
                 <!-- Password input -->
@@ -59,7 +59,7 @@
 
                 <!-- Repeat Password input -->
                 <div class="form-outline mb-2">
-                    <label class="form-label" for="registerRepeatPassword">Repeat password</label>
+                    <label class="form-label" for="registerRepeatPassword">Confirm Password</label>
                     <input type="password" id="registerRepeatPassword" class="form-control" placeholder="Repeat your password" required />
 
                 </div>
@@ -95,6 +95,10 @@
 
             <script>
                 var charactersonly = /^[A-Za-z\s]+$/;
+                var uppercase = /[A-Z]/;
+                var lowercase = /[a-z]/;
+                var number = /[0-9]/;
+                var specialChar = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]+/;
 
                 function formValidation() {
                     var registerFirstName = $("#registerFirstName").val();
@@ -108,9 +112,6 @@
                     console.log("Last Name: " + registerLastName);
                     if (!registerLastName.match(charactersonly)) {
                         alert("Last name must contain characters only.");
-                        return false;
-                    } else if (registerLastName.length < 2) {
-                        alert("Last name must be 2 or more characters.");
                         return false;
                     }
 
@@ -126,21 +127,40 @@
                     if (registerUsername.length < 4) {
                         alert("Username must be 4 or more characters.");
                         return false;
-                    } else if (registerUsername.length > 12) {
-                        alert("Username will not accept characters beyond 12.");
+                    } else if (registerUsername.length > 5) {
+                        alert("Username will not accept characters beyond 5.");
+                        return false;
+                    }
+                    
+                    var registerPassword = $("#registerPassword").val();
+                    console.log("{Password: " + registerPassword);
+                    if (registerPassword.length < 8) { 
+                        alert("Password must be atleast 8 characters.");
+                        return false;
+                    } else if (registerPassword.length > 16) {
+                        alert("Password will not accept character beyond 16.");
+                        return false;
+                    } else if (!registerPassword.match(uppercase)) {
+                         alert("Password must contain atleast 1 uppercase letter.");
+                         return false;
+                    } else if (!registerPassword.match(lowercase)) {
+                        alert("Password must contain atleast 1 lowercase letter.");
+                        return false;
+                    } else if (!registerPassword.match(number)) {
+                        alert("Password must contain atleast 1 number.");
+                        return false;
+                    } else if (!registerPassword.match(specialChar)) {
+                        alert("Password must contain atleast 1 special character.");
                         return false;
                     }
 
-                    $(document).ready(function () {
-                        $("#registerAddress").on("input", function () {
-                            var inputVal = $(this).val();
-                            var regex = /^[a-zA-Z0-9\s]+$/;
-                            if (!regex.test(inputVal)) {
-                                $(this).val(inputVal.replace(/[^a-zA-Z0-9\s]/g, ''));
-                            }
-                        });
-                    });
-
+                    var registerRepeatPassword = $("#registerRepeatPassword").val();
+                    console.log("{Repeat Password: " + registerRepeatPassword);
+                    if (registerRepeatPassword !== registerPassword) {
+                        alert("Password do not match.");
+                        return false;
+                    }
+                    
                     var registerNumber = $("#registerNumber").val();
                     console.log("Number: " + registerNumber);
                     if (registerNumber.length !== 11) {
@@ -150,10 +170,12 @@
                         alert("Number must be numeric.");
                         return false;
                     }
+
                     // Input fields validated
                     alert("Success!");
                     return true;
-                }
+                    
+    }
 
             </script>
 
