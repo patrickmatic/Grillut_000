@@ -71,12 +71,12 @@
                         <!-- Add table rows dynamically using JavaScript or server-side code -->
                     </tbody>
                 </table>
-                <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#prdformModal">ADD USER</button>
+                <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#userformModal">ADD USER</button>
             </div>
         </section>
                             
         <!-- Modal -->
-        <div class="modal fade" id="userformModal" tabindex="-1" aria-labelledby="userformModalLabel" aria-hidden="true">
+        <div class="modal fade" id="userformModal" tabindex="-1" aria-labelledby="userformModalLabel" aria-hidden="true" >
             <div class="modal-dialog">
                 <div class="modal-content">
 
@@ -86,7 +86,7 @@
                     </div>
 
                     <div class="modal-body">
-                        <jsp:include page="useform.jsp"/>
+                        <jsp:include page="userform.jsp"/>
                     </div>
 
                     <div class="modal-footer">
