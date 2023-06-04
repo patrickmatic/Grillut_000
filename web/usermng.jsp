@@ -1,7 +1,7 @@
 <%-- 
-    Document   : products
-    Created on : Apr 11, 2023, 6:34:26 PM
-    Author     : Matic
+    Document   : usermng
+    Created on : Jun 4, 2023, 5:09:37 PM
+    Author     : Ze Familee
 --%>
 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -27,66 +27,66 @@
         <jsp:include page="header.jsp"/>
 
         <div class="container" style="padding-top: 100px;">
-            <h1>Product Search</h1>
+            <h1>User Management</h1>
             <form id="searchForm">
                 <div class="form-group mb-2">
-                    <label for="inputProductID">Product ID:</label>
-                    <input type="text" class="form-control" id="inputProductID" name="id">
+                    <label for="inputProductID">User ID:</label>
+                    <input type="text" class="form-control" id="inputUserID" name="uuid">
                 </div>
                 <div class="form-group mb-2">
-                    <label for="inputProductName">Product Name:</label>
-                    <input type="text" class="form-control" id="inputProductName" name="name">
+                    <label for="inputProductName">Username:</label>
+                    <input type="text" class="form-control" id="inputUserName" name="unname">
                 </div>
                 <button type="submit" class="btn btn-primary">SEARCH</button>
             </form>
         </div>
-        
-       
+
+
 
         <section class="d-flex container-lg justify-content-center">
             <!-- Table List -->
             <div class="container mt-5">
-                <p class='text-center'><c:out value="${message}"/></p>
-                <h2 class="text-center">Product List</h2>
-                <table id="productTable" class="table">
+                <p class='text-center'><c:out value=""/></p>
+                <h2 class="text-center">User List</h2>
+                <table id="userTable" class="table">
                     <thead>
                         <tr>
-                            <th>Product ID</th>
-                            <th>Product Name</th>
+                            <th>User ID</th>        
+                            <th>Username</th>
                             <th>Description</th>
-                            <th>Size</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
+                            <th>User Role</th>
+                            <th>Login Status</th>
+                            <th>Account Status</th>
                         </tr>
                     </thead>
-                    <tbody id='productList' class="mb-3" style='height: 45vh;'>
+                    <tbody id='userList' class="mb-3" style='height: 45vh;'>
                         <tr>
-                            <td><c:out value="${product.productID}"/></td>
-                            <td><c:out value="${product.productName}"/></td>
-                            <td><c:out value="${product.productDescription}"/></td>
-                            <td><c:out value="${product.productSize}"/></td>
-                            <td><c:out value="${product.productPrice}"/></td>
-                            <td><c:out value="${product.productQuantity}"/></td>
+                            <td><c:out value=""/></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <!-- Add table rows dynamically using JavaScript or server-side code -->
                     </tbody>
                 </table>
-                <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#prdformModal">ADD PRODUCT</button>
+                <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#prdformModal">ADD USER</button>
             </div>
         </section>
-
+                            
         <!-- Modal -->
-        <div class="modal fade" id="prdformModal" tabindex="-1" aria-labelledby="prdformModalLabel" aria-hidden="true">
+        <div class="modal fade" id="userformModal" tabindex="-1" aria-labelledby="userformModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
 
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="prdformModalLabel">Product Form</h1>
+                        <h1 class="modal-title fs-5" id="userformModalLabel">User Form</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
                     <div class="modal-body">
-                        <jsp:include page="prdform.jsp"/>
+                        <jsp:include page="useform.jsp"/>
                     </div>
 
                     <div class="modal-footer">
@@ -98,8 +98,7 @@
         </div>
 
 
-    
-    <jsp:include page="footer.jsp"/>
-    <script src = "js/bootstrap.bundle.min.js" ></script>
-</body>
+        <jsp:include page="footer.jsp"/>
+        <script src = "js/bootstrap.bundle.min.js" ></script>
+    </body>
 </html>
