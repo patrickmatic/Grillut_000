@@ -11,23 +11,23 @@
             </div>
             <div class="">
                 <label class="form-label" for="PN">Product Name</label>
-                <input type="text" id="PN" class="form-control" placeholder="Characters only, min. of 3" name='productName' required/>
+                <input type="text" id="PN" class="form-control" placeholder="Characters only, min. of 3" name="productName" required/>
             </div>
             <div class="">
                 <label class="form-label" for="DSCRP">Description</label>
-                <input type="text" id="DSCRP" class="form-control" placeholder="Characters only, min. of 3" name='productDescription' required/>
+                <input type="text" id="DSCRP" class="form-control" placeholder="Characters only, min. of 3" name="productDescription" required/>
             </div>
             <div class="">
                 <label class="form-label" for="pfsize">Size</label>
-                <input type="text" id="pfsize" class="form-control" name='productSize'/>
+                <input type="text" id="pfsize" class="form-control" name="productSize"/>
             </div>
             <div class="">
                 <label class="form-label" for="pprice">Price</label>
-                <input type="text" id="pprice" class="form-control" placeholder="Must be greater than 0.00" name='productPrice' required/>
+                <input type="text" id="pprice" class="form-control" placeholder="Must be greater than 0.00" name="productPrice" required/>
             </div>                
             <div class="">
                 <label class="form-label" for="pquantity">Quantity</label>
-                <input type="text" id="pquantity" class="form-control" placeholder="Must be greater than 0" name='productQuantity' required/>
+                <input type="text" id="pquantity" class="form-control" placeholder="Must be greater than 0" name="productQuantity" required/>
             </div>
         </div>
 

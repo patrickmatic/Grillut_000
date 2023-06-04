@@ -7,29 +7,24 @@
         <div class="form-outline mb-2 row">
             <div class="">
                 <label class="form-label" for="UID">User ID</label>
-                <input type="number" id="UID" class="form-control" placeholder="Must be greater than 0" name="userID" required/>
+                <input type="number" id="UID" class="form-control" placeholder="" name="userID"/>
             </div>
             <div class="">
-                <label class="form-label" for="UN">Product Name</label>
-                <input type="text" id="UN" class="form-control" placeholder="Characters only, min. of 3" name='productName' required/>
+                <label class="form-label" for="UFN">First Name</label>
+                <input type="text" id="UFN" class="form-control" placeholder="" name="userFN"/>
             </div>
             <div class="">
-                <label class="form-label" for="DSCRP">Description</label>
-                <input type="text" id="DSCRP" class="form-control" placeholder="Characters only, min. of 3" name='productDescription' required/>
+                <label class="form-label" for="UMN">Middle Name</label>
+                <input type="text" id="UMN" class="form-control" placeholder="" name="userMN"/>
             </div>
             <div class="">
-                <label class="form-label" for="pfsize">Size</label>
-                <input type="text" id="pfsize" class="form-control" name='productSize'/>
+                <label class="form-label" for="ULN">Last Name</label>
+                <input type="text" id="ULN" class="form-control" name="userLN"/>
             </div>
             <div class="">
-                <label class="form-label" for="pprice">Price</label>
-                <input type="text" id="pprice" class="form-control" placeholder="Must be greater than 0.00" name='productPrice' required/>
+                <label class="form-label" for="userR">User Role</label>
+                <input type="text" id="userR" class="form-control" placeholder="" name="userRole"/>
             </div>                
-            <div class="">
-                <label class="form-label" for="pquantity">Quantity</label>
-                <input type="text" id="pquantity" class="form-control" placeholder="Must be greater than 0" name='productQuantity' required/>
-            </div>
-        </div>
 
         <!-- Submit button -->
         <!--        <button type="submit" class="btn btn-primary btn-block mb-3 col-12">Save</button>-->
