@@ -9,19 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Grillut</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--        bootstrap css-->
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
-        <!--        jquery-->
-        <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.6.4.min.js"></script>
-
-
+        <jsp:include page="head.jsp"/>
     </head>
     <body>
         <jsp:include page="header.jsp"/>
@@ -46,7 +34,8 @@
         <section class="d-flex container-lg justify-content-center">
             <!-- Table List -->
             <div class="container mt-5">
-                <p class='text-center'><c:out value=""/></p>
+                <p class='text-center'><c:out value="${message}"/></p>
+                <p class='text-center'><c:out value="${message1}"/></p>
                 <h2 class="text-center">User List</h2>
                 <table id="userTable" class="table">
                     <thead>
@@ -61,12 +50,7 @@
                     </thead>
                     <tbody id='userList' class="mb-3" style='height: 45vh;'>
                         <tr>
-                            <td><c:out value=""/></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            
                         </tr>
                         <!-- Add table rows dynamically using JavaScript or server-side code -->
                     </tbody>
@@ -74,7 +58,7 @@
                 <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#userformModal">ADD USER</button>
             </div>
         </section>
-                            
+
         <!-- Modal -->
         <div class="modal fade" id="userformModal" tabindex="-1" aria-labelledby="userformModalLabel" aria-hidden="true" >
             <div class="modal-dialog">

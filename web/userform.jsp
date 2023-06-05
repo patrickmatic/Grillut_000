@@ -1,6 +1,6 @@
 <section class="d-flex container justify-content-center align-items-center">
 
-    <form class="container" method="post" onsubmit="return usrformValidation()" action="${pageContext.request.contextPath}/usermng">
+    <form class="container" method="post" onsubmit="return usrformValidation()" action="${pageContext.request.contextPath}/user">
 
         <!-- form input -->
         <div class="form-outline mb-2 row">

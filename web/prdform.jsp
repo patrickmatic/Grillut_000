@@ -1,6 +1,6 @@
 <section class="d-flex container justify-content-center align-items-center">
 
-    <form class="container" method="post" onsubmit="return prdformValidation()" action="${pageContext.request.contextPath}/products">
+    <form class="container" method="post" onsubmit="return formValidation()" action="${pageContext.request.contextPath}/products">
 
         <!-- form input -->
         <div class="form-outline mb-2 row">

@@ -10,8 +10,8 @@ package ph.pup.itech.grillut.model;
  */
 public class ProductModel {
 
-    public int productID;
-    public String productName;
+    private int productID;
+    private String productName;
     private String productDescription;
     private String productSize;
     private double productPrice;

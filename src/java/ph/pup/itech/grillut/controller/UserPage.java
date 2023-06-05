@@ -10,10 +10,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import ph.pup.itech.grillut.model.ProductModel;
-import ph.pup.itech.grillut.dao.ProductDao;
+import ph.pup.itech.grillut.dao.UserDao;
+import ph.pup.itech.grillut.model.UserModel;
 
-public class addProduct extends HttpServlet {
+public class UserPage extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -33,31 +33,41 @@ public class addProduct extends HttpServlet {
 
     private void getProduct(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int productID = Integer.parseInt(request.getParameter("productID"));
-        String productName = request.getParameter("productName");
-        String productDescription = request.getParameter("productDescription");
-        String productSize = request.getParameter("productSize");
-        double productPrice = Double.parseDouble(request.getParameter("productPrice"));
-        int productQuantity = Integer.parseInt(request.getParameter("productQuantity"));
+        String userID = request.getParameter("userID");
+        String userFirstName = request.getParameter("userFN");
+        String userMiddleName = request.getParameter("userMN");
+        String userLastName = request.getParameter("userLN");
+        String userRole = request.getParameter("userR");
 
-        ProductModel prd = new ProductModel(
-                productID, productName, productDescription, productSize, productPrice, productQuantity);
+        if (userID == null) {
+            System.out.println("Error");
+            throw new Error("Null form");
+        } else {
+            System.out.println("Success!");
+        }
 
-        ProductDao productDao = new ProductDao();
-        ProductModel getProduct = productDao.getProductDetails(prd);
+        UserModel user = new UserModel(
+                userID, userFirstName, userMiddleName, userLastName, userRole);
+        UserDao userDao = new UserDao();
+        UserModel getUser = userDao.getUserDetails(user);
 
-        String message = getProduct.getproductName() + " with " + getProduct.getproductID() + " has been added to inventory.";
+        String message = getUser.getuserID() + " user has been added.";
+        String message1 = getUser.getuserID() + " user has been added.";
 
-        request.setAttribute("product", getProduct);
         request.setAttribute("message", message);
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/products.jsp");
+        request.setAttribute("message1", message1);
+
+        System.out.println(message);
+
+        RequestDispatcher rd = getServletContext().getRequestDispatcher("/usermng.jsp");
         rd.forward(request, response);
     }
 
     private void showForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher rd = getServletContext().getRequestDispatcher(
-                "/products.jsp");
+                "/usermng.jsp");
         rd.forward(request, response);
     }
+
 }

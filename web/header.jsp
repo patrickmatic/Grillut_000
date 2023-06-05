@@ -6,15 +6,15 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
   <div class="container-lg">
-    <a class="navbar-brand" href="home.jsp"><img src="css/media/logo_header.svg" height="40"/></a>
+    <a class="navbar-brand" href="http://localhost:8080/GrillutNPM/home"><img src="css/media/logo_header.svg" height="40"/></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="nav me-auto ms-0 mb-2 mb-lg-0">
-        <li class="nav_link"><a href="home.jsp" class="nav-link nav_link px-2 text-decoration-none">HOME</a></li>
-        <li class="nav_link"><a href="http://localhost:8080/GrillutNPM/products.jsp" class="nav-link nav_link px-2 text-decoration-none">PRODUCTS</a></li>
-        <li class="nav_link"><a href="usermng.jsp" class="nav-link nav_link px-2 text-decoration-none">USER MANAGEMENT</a></li>
+        <li class="nav_link"><a href="http://localhost:8080/GrillutNPM/home" class="nav-link nav_link px-2 text-decoration-none">HOME</a></li>
+        <li class="nav_link"><a href="http://localhost:8080/GrillutNPM/products" class="nav-link nav_link px-2 text-decoration-none">PRODUCTS</a></li>
+        <li class="nav_link"><a href="http://localhost:8080/GrillutNPM/user" class="nav-link nav_link px-2 text-decoration-none">USER MANAGEMENT</a></li>
       </ul>
 
     </div>
