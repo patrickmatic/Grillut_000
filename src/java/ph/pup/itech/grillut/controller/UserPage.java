@@ -55,7 +55,7 @@ public class UserPage extends HttpServlet {
         String message1 = getUser.getuserID() + " user has been added.";
 
         request.setAttribute("message", message);
-        request.setAttribute("message1", message1);
+        request.setAttribute("user", getUser);
 
         System.out.println(message);
 

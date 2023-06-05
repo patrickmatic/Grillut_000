@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <script>
+<!--        <script>
             var charactersonly = /^[A-Za-z\s]+$/;
 
             function formValidation() {
@@ -77,5 +77,5 @@
 
                 return true;
             }
-        </script>
+        </script>-->
 </section>

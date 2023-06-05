@@ -35,7 +35,6 @@
             <!-- Table List -->
             <div class="container mt-5">
                 <p class='text-center'><c:out value="${message}"/></p>
-                <p class='text-center'><c:out value="${message1}"/></p>
                 <h2 class="text-center">User List</h2>
                 <table id="userTable" class="table">
                     <thead>
@@ -50,7 +49,12 @@
                     </thead>
                     <tbody id='userList' class="mb-3" style='height: 45vh;'>
                         <tr>
-                            
+                            <td><c:out value="${user.userID}"/></td>
+                            <td></td>
+                            <td></td>
+                            <td><c:out value="${user.userRole}"/></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <!-- Add table rows dynamically using JavaScript or server-side code -->
                     </tbody>
@@ -70,7 +74,7 @@
                     </div>
 
                     <div class="modal-body">
-                        <jsp:include page="userform.jsp"/>
+                        <jsp:include page="prdform_1.jsp"/>
                     </div>
 
                     <div class="modal-footer">

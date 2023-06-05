@@ -1,6 +1,6 @@
 <section class="d-flex container justify-content-center align-items-center">
 
-    <form class="container" method="post" onsubmit="return usrformValidation()" action="${pageContext.request.contextPath}/user">
+    <form class="container" method="post" onsubmit="return formValidation()" action="${pageContext.request.contextPath}/user">
 
         <!-- form input -->
         <div class="form-outline mb-2 row">
@@ -29,7 +29,7 @@
         <script>
             var charactersOnly = /^[a-zA-Z\s]+$/;
 
-            function usrformValidation() {
+            function formValidation() {
                 var UFN = $("#UFN").val();
                 console.log("First Name" + UFN);
                 if (!UFN.match(charactersOnly)) {
@@ -45,14 +45,14 @@
                 }
 
                 var ULN = $("#ULN").val();
-                console.log("Last Name" + UMN);
+                console.log("Last Name" + ULN);
                 if (!ULN.match(charactersOnly)) {
                     alert("Last Name must contain characters only.");
                     return false;
                 }
 
+
                 return true;
             }
-
         </script>
 </section>
