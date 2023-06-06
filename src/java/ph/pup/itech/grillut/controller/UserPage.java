@@ -38,7 +38,7 @@ public class UserPage extends HttpServlet {
         String userFirstName = request.getParameter("userFN");
         String userMiddleName = request.getParameter("userMN");
         String userLastName = request.getParameter("userLN");
-        String userRole = request.getParameter("userR");
+        String userRole = request.getParameter("userRole");
 
         if (userID == null) {
             System.out.println("Error");
