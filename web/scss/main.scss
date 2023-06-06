@@ -88,6 +88,11 @@ $theme-colors: (
       top: 0;
   }
   
+  
+  .about_imgchef{
+      position: absolute;
+      top: 0;
+  }
   .landing_invite{
       text-align: justified;
   }
@@ -97,7 +102,56 @@ $theme-colors: (
 /*    position: absolute;*/
     z-index: 99;
 }
+.about_imgchef{
+/*    position: absolute;*/
+    z-index: 99;
+}
+/*left*/
+.about_img {
+  opacity: 0;
+  transform: translateX(-10px);
+}
 
+.animate-fadeInLeft {
+  opacity: 1;
+  animation-name: fadeInLeft;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+ /*right*/
+ .about_imgchef {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+.animate-fadeInRight {
+  opacity: 1;
+  animation-name: fadeInRight;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
 .title h2{
     position: absolute;

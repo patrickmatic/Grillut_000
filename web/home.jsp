@@ -47,7 +47,7 @@
                         Our chefs take this classic dish to the next level by grilling the egg to give it a smoky and charred flavor that pairs perfectly with the rich and meaty flavors of the partially foamed duckling inside.
                     </div>
                 </div>    
-                 <div class=" col-md-6 offset-md-6 about_img rounded">
+                 <div class=" col-md-6 offset-md-6 about_imgchef rounded">
                     <img class="img-fluid rounded-3" src="css\media\Aboutchef.jpg"style=" box-shadow: 0 0 11px rgba(33,33,33,.2);"/> 
                 </div>
             </div>
@@ -60,7 +60,60 @@
         <img class="mx-auto spinning" style="height: 10em;" src="css\media\balut.png""/>
     </div>
 </div>
-        
+        <script> window.addEventListener('scroll', function () {
+                var aboutImgElements = document.getElementsByClassName('about_img');
+                for (var i = 0; i < aboutImgElements.length; i++) {
+                    if (isElementInViewport(aboutImgElements[i])) {
+                        aboutImgElements[i].classList.add('animate-fadeInLeft');
+                    }
+                }
+            });
+
+            function isElementInViewport(element) {
+                var rect = element.getBoundingClientRect();
+                var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+
+                // Define the threshold for determining visibility
+                var threshold = 100;
+
+                return (
+                        rect.top >= -threshold &&
+                        rect.left >= -threshold &&
+                        rect.bottom <= (windowHeight + threshold) &&
+                        rect.right <= (windowWidth + threshold)
+                        );
+            }
+
+
+
+            window.addEventListener('scroll', function () {
+                var aboutImgElements = document.getElementsByClassName('about_imgchef');
+                for (var i = 0; i < aboutImgElements.length; i++) {
+                    if (isElementInViewport(aboutImgElements[i])) {
+                        aboutImgElements[i].classList.add('animate-fadeInRight');
+                    }
+                }
+            });
+
+            function isElementInViewport(element) {
+                var rect = element.getBoundingClientRect();
+                var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+
+                // Define the threshold for determining visibility
+                var threshold = 100;
+
+                return (
+                        rect.top >= -threshold &&
+                        rect.left >= -threshold &&
+                        rect.bottom <= (windowHeight + threshold) &&
+                        rect.right <= (windowWidth + threshold)
+                        );
+            }
+
+
+        </script>
         <jsp:include page="footer.jsp"/>
         <script src="js/bootstrap.bundle.min.js"></script>
     </body>
