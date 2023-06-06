@@ -74,7 +74,7 @@
                     </div>
 
                     <div class="modal-body">
-                        <jsp:include page="prdform_1.jsp"/>
+                        <jsp:include page="userform.jsp"/>
                     </div>
 
                     <div class="modal-footer">

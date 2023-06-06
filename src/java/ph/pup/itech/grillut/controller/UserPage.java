@@ -18,11 +18,12 @@ public class UserPage extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
+        try{
             getProduct(request, response);
-        } finally {
+        } catch (IOException | ServletException Report){
             showForm(request, response);
         }
+//        getProduct(request, response);
     }
 
     @Override
@@ -41,7 +42,7 @@ public class UserPage extends HttpServlet {
 
         if (userID == null) {
             System.out.println("Error");
-            throw new Error("Null form");
+            throw new IOException("Null form");
         } else {
             System.out.println("Success!");
         }
@@ -52,7 +53,6 @@ public class UserPage extends HttpServlet {
         UserModel getUser = userDao.getUserDetails(user);
 
         String message = getUser.getuserID() + " user has been added.";
-        String message1 = getUser.getuserID() + " user has been added.";
 
         request.setAttribute("message", message);
         request.setAttribute("user", getUser);
