@@ -48,15 +48,6 @@
                         </tr>
                     </thead>
                     <tbody id='userList' class="mb-3" style='height: 45vh;'>
-                        <tr>
-                            <td><c:out value="${user.userID}"/></td>
-                            <td></td>
-                            <td></td>
-                            <td><c:out value="${user.userRole}"/></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <!-- Add table rows dynamically using JavaScript or server-side code -->
                     </tbody>
                 </table>
                 <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#userformModal">ADD USER</button>

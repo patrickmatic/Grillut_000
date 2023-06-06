@@ -48,15 +48,6 @@
                         </tr>
                     </thead>
                     <tbody id='productList' class="mb-3" style='height: 45vh;'>
-                        <tr>
-                            <td><c:out value="${product.productID}"/></td>
-                            <td><c:out value="${product.productName}"/></td>
-                            <td><c:out value="${product.productDescription}"/></td>
-                            <td><c:out value="${product.productSize}"/></td>
-                            <td><c:out value="${product.productPrice}"/></td>
-                            <td><c:out value="${product.productQuantity}"/></td>
-                        </tr>
-                        <!-- Add table rows dynamically using JavaScript or server-side code -->
                     </tbody>
                 </table>
                 <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#prdformModal">ADD PRODUCT</button>
