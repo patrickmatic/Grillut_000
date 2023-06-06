@@ -1,7 +1,5 @@
 <section class="d-flex container justify-content-center align-items-center">
 
-    <form class="container" method="post" onsubmit="return formValidation()" action="${pageContext.request.contextPath}/products">
-
         <!-- form input -->
         <div class="form-outline mb-2 row">
             <div class="">
@@ -33,7 +31,7 @@
         <script>
             var charactersonly = /^[A-Za-z\s]+$/;
 
-            function formValidation() {
+            function prdformValidation() {
                 var PID = $("#PID").val();
                 console.log("Product ID " + PID);
                 if (PID <= 0) {

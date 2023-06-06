@@ -14,7 +14,9 @@
     <body>
         <section class="d-flex register container-sm justify-content-center align-items-center px-md-5 col-md-9">
 
-            <form class="container" method="post" onsubmit="return formValidation()" action="${pageContext.request.contextPath}/customer/registration"> 
+
+
+            <form class="container" method="post" onsubmit="return rgstrformValidation()" action="${pageContext.request.contextPath}/customer/registration"> 
                 <h1 class="text-center border-bottom">SIGN UP</h1>
 
                 <!-- Name input -->
@@ -90,7 +92,7 @@
                 var number = /[0-9]/;
                 var specialChar = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]+/;
 
-                function formValidation() {
+                function rgstrformValidation() {
                     var registerFirstName = $("#registerFirstName").val();
                     console.log("First Name: " + registerFirstName);
                     if (!registerFirstName.match(charactersonly)) {
@@ -160,16 +162,11 @@
                         alert("Number must be numeric.");
                         return false;
                     }
-                    
+
                     return true;
                 }
-
             </script>
-
         </section>
-
-
-
         <script src="js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

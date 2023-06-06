@@ -21,6 +21,7 @@ public class UserDao {
         String userLastName = user.getuserLastName();
         String userRole = user.getuserRole();
         userDetails = new UserModel(userID, userFirstName, userMiddleName, userLastName, userRole);
+        System.out.println("User Details: " + userDetails);
         return userDetails;
     }
 }

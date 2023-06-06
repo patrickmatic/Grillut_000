@@ -18,9 +18,9 @@ public class UserPage extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try{
+        try {
             getProduct(request, response);
-        } catch (IOException | ServletException Report){
+        } catch (IOException | ServletException Report) {
             showForm(request, response);
         }
 //        getProduct(request, response);
@@ -54,8 +54,8 @@ public class UserPage extends HttpServlet {
 
         String message = getUser.getuserID() + " user has been added.";
 
-        request.setAttribute("message", message);
         request.setAttribute("user", getUser);
+        request.setAttribute("message", message);
 
         System.out.println(message);
 

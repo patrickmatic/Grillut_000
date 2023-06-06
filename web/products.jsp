@@ -28,8 +28,8 @@
                 <button type="submit" class="btn btn-primary">SEARCH</button>
             </form>
         </div>
-        
-       
+
+
 
         <section class="d-flex container-lg justify-content-center">
             <!-- Table List -->
@@ -68,26 +68,29 @@
             <div class="modal-dialog">
                 <div class="modal-content">
 
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="prdformModalLabel">Product Form</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
+                    <form class="container" method="post" onsubmit="return prdformValidation()" action="${pageContext.request.contextPath}/products">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="prdformModalLabel">Product Form</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
 
-                    <div class="modal-body">
-                        <jsp:include page="prdform.jsp"/>
-                    </div>
+                        <div class="modal-body">
+                            <jsp:include page="prdform.jsp"/>
+                        </div>
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save</button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </form>
+                        
                 </div>
             </div>
         </div>
 
 
-    
-    <jsp:include page="footer.jsp"/>
-    <script src = "js/bootstrap.bundle.min.js" ></script>
-</body>
+
+        <jsp:include page="footer.jsp"/>
+        <script src = "js/bootstrap.bundle.min.js" ></script>
+    </body>
 </html>
