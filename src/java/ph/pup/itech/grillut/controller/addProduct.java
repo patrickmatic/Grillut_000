@@ -50,6 +50,9 @@ public class addProduct extends HttpServlet {
 
         request.setAttribute("product", getProduct);
         request.setAttribute("message", message);
+        
+        System.out.println(message);
+        
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/products.jsp");
         rd.forward(request, response);
     }
