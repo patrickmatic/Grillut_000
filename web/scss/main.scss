@@ -5,7 +5,7 @@
 
 $primary: #d54000;
 $theme-colors: (
-  primary: #d54000
+primary: #d54000
 );
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
@@ -13,11 +13,11 @@ $theme-colors: (
 // Then add additional custom code here
 
 *{
-  padding: 0;
-  margin:  0;
-  box-sizing: border-box;
-  font-family:'Archivo Black' , sans-serif;
-  scroll-behavior: smooth;
+    padding: 0;
+    margin:  0;
+    box-sizing: border-box;
+    font-family:'Archivo Black' , sans-serif;
+    scroll-behavior: smooth;
 }
 
 
@@ -26,7 +26,7 @@ $theme-colors: (
     height: 100vh;
     text-align: center;
     width: 100%;
-/*    overflow: hidden;*/
+    /*    overflow: hidden;*/
 }
 
 .title video{
@@ -77,76 +77,76 @@ $theme-colors: (
 }
 
 @media only screen and (max-width: 766px) {
-  .about_text {
-    position: relative;
-    margin-top: 25%;
-    padding-top: 35%;
-    border-radius: .4rem
-  }
-  .about_img{
-      position: absolute;
-      top: 0;
-  }
-  
-  .about_imgchef{
-      position: absolute;
-      top: 0;
-  }
-  .landing_invite{
-      text-align: justified;
-  }
+    .about_text {
+        position: relative;
+        margin-top: 25%;
+        padding-top: 35%;
+        border-radius: .4rem
+    }
+    .about_img{
+        position: absolute;
+        top: 0;
+    }
+
+    .about_imgchef{
+        position: absolute;
+        top: 0;
+    }
+    .landing_invite{
+        text-align: justified;
+    }
 }
 
 .about_img{
-/*    position: absolute;*/
+    /*    position: absolute;*/
     z-index: 99;
 }
-    
+
 /*left*/
 .about_img {
-  opacity: 0;
-  transform: translateX(-10px);
+    opacity: 0;
+    transform: translateX(-10px);
 }
 
 .animate-fadeInLeft {
-  opacity: 1;
-  animation-name: fadeInLeft;
-  animation-fill-mode: both;
-  animation-duration: 1s;
+    opacity: 1;
+    animation-name: fadeInLeft;
+    animation-fill-mode: both;
+    animation-duration: 1s;
 }
 
 @keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
- /*right*/
- .about_imgchef {
-  opacity: 0;
-  transform: translateX(10px);
+/*right*/
+.about_imgchef {
+    opacity: 0;
+    transform: translateX(10px);
 }
 
 .animate-fadeInRight {
-  opacity: 1;
-  animation-name: fadeInRight;
-  animation-fill-mode: both;
-  animation-duration: 1s;
+    opacity: 1;
+    animation-name: fadeInRight;
+    animation-fill-mode: both;
+    animation-duration: 1s;
 }
 
 @keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .title h2{
@@ -178,28 +178,43 @@ $theme-colors: (
 }
 
 @media only screen and (max-width: 766px){
-.register{
-    height: auto;
-}
+    .register{
+        height: auto;
+    }
 }
 
 @media only screen and (max-height: 450px){
-.login{
-    height: auto;
-}
-.register{
-    height: auto;
-}
+    .login{
+        height: auto;
+    }
+    .register{
+        height: auto;
+    }
 }
 
 @keyframes spin {
-    from { transform: rotate(0deg);}
-    to { transform: rotate(360deg);}
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 .spinning {
     animation: spin 60s infinite linear;
 }
 
+.btn_all{
+    border-radius: 15px 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbar  {
+    background: transparent;
+    transition: background 0.3s ease-in-out;
+    color: #d54000;
+    //home, products, user management//
+}
 
 .nav_link{
     position: relative;
@@ -207,8 +222,9 @@ $theme-colors: (
 
 .nav_link :hover{
     text-decoration: underline;
-    border-bottom: 2px solid #A33100;
+    border-bottom: 4px solid #A33100;
 }
+
 .nav_link ::after{
     content: '';
     opacity: 0;
@@ -221,60 +237,41 @@ $theme-colors: (
     left: 0;
 }
 
-.nav_link :hover::after{
-    opacity: 1;
-    color: #A3310;
-
-}
-
-.btn_all{
-    border-radius: 15px 50px; 
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.navbar  {
-      background: transparent;
-      transition: background 0.3s ease-in-out;
-      color: #d54000;
-    }
-
-    .navbar.active {
-      background: #d54000;
-      color: #fff;
-    }
-    
-    .navbar.active:hover{  
-      color: #A3310;
-    }
-
-    .navbar.active:hover::after{  
-      color: #fff;
-    }
- .custom-nav {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  
+.custom-nav {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .custom-nav li {
-  margin-right: 1rem;
+    margin-right: 1rem;
 }
 
 .custom-nav li:first-child {
-  margin-left: 0;
+    margin-left: 0;
 }
 
 .custom-nav a {
-  text-decoration: none;
-  padding: 0.5rem;
-}   
-  
-.custom-nav a:hover {
-  color: #A33100;
+    text-decoration: none;
+    padding: 0.5rem;
 }
 
-.navbar.a:hover::after{  
-      color: #fff;
-    }
+.custom-nav a:hover {
+    color: #A33100;
+}
+
+.custom-nav a.active:hover {
+    color: #E1D9D1;
+}
+
+.navbar.active {
+    background: #d54000;
+    color: #fff;
+}
+
+.nav_link.active :hover{
+    text-decoration: underline;
+    border-bottom: 4px solid #E1D9D1;
+}

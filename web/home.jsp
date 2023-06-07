@@ -9,11 +9,11 @@
 <html>
     <head>
         <jsp:include page="head.jsp"/>
-         
+
     </head>
     <body>
         <jsp:include page="header.jsp"/>
-        
+
         <div class="title container-fluid">
             <div>
                 <video autoplay muted loop>
@@ -24,8 +24,8 @@
                 </div>
             </div>
         </div>
-        
-<!--        About Us-->
+
+        <!--        About Us-->
 
         <div class="container-fluid mb-5">
             <div class="row align-items-center  about_us">
@@ -47,19 +47,19 @@
                         Our chefs take this classic dish to the next level by grilling the egg to give it a smoky and charred flavor that pairs perfectly with the rich and meaty flavors of the partially foamed duckling inside.
                     </div>
                 </div>    
-                 <div class=" col-md-6 offset-md-6 about_imgchef rounded">
+                <div class=" col-md-6 offset-md-6 about_imgchef rounded">
                     <img class="img-fluid rounded-3" src="css\media\Aboutchef.jpg"style=" box-shadow: 0 0 11px rgba(33,33,33,.2);"/> 
                 </div>
             </div>
         </div>
 
-<!--        Sign-in/Register btn-->
+        <!--        Sign-in/Register btn-->
 
-<div class="container-sm">
-    <div class="col-12 d-flex justify-content-center my-5">
-        <img class="mx-auto spinning" style="height: 10em;" src="css\media\balut.png""/>
-    </div>
-</div>
+        <div class="container-sm">
+            <div class="col-12 d-flex justify-content-center my-5">
+                <img class="mx-auto spinning" style="height: 10em;" src="css\media\balut.png""/>
+            </div>
+        </div>
         <script> window.addEventListener('scroll', function () {
                 var aboutImgElements = document.getElementsByClassName('about_img');
                 for (var i = 0; i < aboutImgElements.length; i++) {
