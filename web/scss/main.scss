@@ -207,7 +207,7 @@ $theme-colors: (
 
 .nav_link :hover{
     text-decoration: underline;
-    border-bottom: 2px solid #d64000;
+    border-bottom: 2px solid #A33100;
 }
 .nav_link ::after{
     content: '';
@@ -215,7 +215,7 @@ $theme-colors: (
     transition: all 0.2s;
     height: 2px;
     width: 100%;
-    background-color: #d64000;
+    background-color: #A33100;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -223,9 +223,58 @@ $theme-colors: (
 
 .nav_link :hover::after{
     opacity: 1;
+    color: #A3310;
+
 }
 
 .btn_all{
     border-radius: 15px 50px; 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+.navbar  {
+      background: transparent;
+      transition: background 0.3s ease-in-out;
+      color: #d54000;
+    }
+
+    .navbar.active {
+      background: #d54000;
+      color: #fff;
+    }
+    
+    .navbar.active:hover{  
+      color: #A3310;
+    }
+
+    .navbar.active:hover::after{  
+      color: #fff;
+    }
+ .custom-nav {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  
+}
+
+.custom-nav li {
+  margin-right: 1rem;
+}
+
+.custom-nav li:first-child {
+  margin-left: 0;
+}
+
+.custom-nav a {
+  text-decoration: none;
+  padding: 0.5rem;
+}   
+  
+.custom-nav a:hover {
+  color: #A33100;
+}
+
+.navbar.a:hover::after{  
+      color: #fff;
+    }
