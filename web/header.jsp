@@ -34,4 +34,4 @@
             $(".custom-nav a:hover").removeClass('active');
         }
     });
-</script>
+</script >
