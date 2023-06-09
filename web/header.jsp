@@ -28,7 +28,7 @@
             $(".navbar").addClass('active');
             $(".nav_link").addClass('active');
             $(".custom-nav a:hover").addClass('active');
-            logoHeader.src = "css/media/logo_header_on.svg";
+            logoHeader.src = "css/media/logo_header_on1.svg";
         } else {
             $(".navbar").removeClass('active');
             $(".nav_link").removeClass('active');
