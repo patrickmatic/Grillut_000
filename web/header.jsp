@@ -6,7 +6,7 @@
 
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-lg">
-        <a class="navbar-brand" href="http://localhost:8080/GrillutNPM/home"><img src="css/media/logo_header.svg" height="40"/></a>
+        <a class="navbar-brand" href="http://localhost:8080/GrillutNPM/home"><img src="css/media/logo_header_off.svg" id="logoHeader" height="40"/></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -28,10 +28,12 @@
             $(".navbar").addClass('active');
             $(".nav_link").addClass('active');
             $(".custom-nav a:hover").addClass('active');
+            logoHeader.src = "css/media/logo_header_on.svg";
         } else {
             $(".navbar").removeClass('active');
             $(".nav_link").removeClass('active');
             $(".custom-nav a:hover").removeClass('active');
+            logoHeader.src = "css/media/logo_header_off.svg";
         }
     });
 </script >
