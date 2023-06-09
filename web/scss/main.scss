@@ -200,8 +200,14 @@ primary: #d54000
         transform: rotate(360deg);
     }
 }
-.spinning {
-    animation: spin 60s infinite linear;
+
+.spinning{
+    animation: none;
+    cursor: pointer;
+}
+
+.spinning.rotate {
+    animation: spin 1s infinite linear;
 }
 
 .btn_all{

@@ -53,68 +53,91 @@
             </div>
         </div>
 
-        <!--        Sign-in/Register btn-->
-
+        <!--    Spin    -->
         <div class="container-sm">
             <div class="col-12 d-flex justify-content-center my-5">
-                <img class="mx-auto spinning" style="height: 10em;" src="css\media\balut.png""/>
+                <img class="mx-auto spinning" style="height: 10em;" src="css/media/balut.png" onclick="toggleSpin(this)" />
             </div>
         </div>
-        <script> window.addEventListener('scroll', function () {
-                var aboutImgElements = document.getElementsByClassName('about_img');
-                for (var i = 0; i < aboutImgElements.length; i++) {
-                    if (isElementInViewport(aboutImgElements[i])) {
-                        aboutImgElements[i].classList.add('animate-fadeInLeft');
-                    }
+
+
+    </div>
+    <script> window.addEventListener('scroll', function () {
+            var aboutImgElements = document.getElementsByClassName('about_img');
+            for (var i = 0; i < aboutImgElements.length; i++) {
+                if (isElementInViewport(aboutImgElements[i])) {
+                    aboutImgElements[i].classList.add('animate-fadeInLeft');
                 }
-            });
-
-            function isElementInViewport(element) {
-                var rect = element.getBoundingClientRect();
-                var windowHeight = window.innerHeight || document.documentElement.clientHeight;
-                var windowWidth = window.innerWidth || document.documentElement.clientWidth;
-
-                // Define the threshold for determining visibility
-                var threshold = 100;
-
-                return (
-                        rect.top >= -threshold &&
-                        rect.left >= -threshold &&
-                        rect.bottom <= (windowHeight + threshold) &&
-                        rect.right <= (windowWidth + threshold)
-                        );
             }
+        });
+
+        function isElementInViewport(element) {
+            var rect = element.getBoundingClientRect();
+            var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+
+            // Define the threshold for determining visibility
+            var threshold = 100;
+
+            return (
+                    rect.top >= -threshold &&
+                    rect.left >= -threshold &&
+                    rect.bottom <= (windowHeight + threshold) &&
+                    rect.right <= (windowWidth + threshold)
+                    );
+        }
 
 
 
-            window.addEventListener('scroll', function () {
-                var aboutImgElements = document.getElementsByClassName('about_imgchef');
-                for (var i = 0; i < aboutImgElements.length; i++) {
-                    if (isElementInViewport(aboutImgElements[i])) {
-                        aboutImgElements[i].classList.add('animate-fadeInRight');
-                    }
+        window.addEventListener('scroll', function () {
+            var aboutImgElements = document.getElementsByClassName('about_imgchef');
+            for (var i = 0; i < aboutImgElements.length; i++) {
+                if (isElementInViewport(aboutImgElements[i])) {
+                    aboutImgElements[i].classList.add('animate-fadeInRight');
                 }
-            });
-
-            function isElementInViewport(element) {
-                var rect = element.getBoundingClientRect();
-                var windowHeight = window.innerHeight || document.documentElement.clientHeight;
-                var windowWidth = window.innerWidth || document.documentElement.clientWidth;
-
-                // Define the threshold for determining visibility
-                var threshold = 100;
-
-                return (
-                        rect.top >= -threshold &&
-                        rect.left >= -threshold &&
-                        rect.bottom <= (windowHeight + threshold) &&
-                        rect.right <= (windowWidth + threshold)
-                        );
             }
+        });
 
+        function isElementInViewport(element) {
+            var rect = element.getBoundingClientRect();
+            var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            var windowWidth = window.innerWidth || document.documentElement.clientWidth;
 
-        </script>
-        <jsp:include page="footer.jsp"/>
-        <script src="js/bootstrap.bundle.min.js"></script>
-    </body>
+            // Define the threshold for determining visibility
+            var threshold = 100;
+
+            return (
+                    rect.top >= -threshold &&
+                    rect.left >= -threshold &&
+                    rect.bottom <= (windowHeight + threshold) &&
+                    rect.right <= (windowWidth + threshold)
+                    );
+        }
+
+        var spinningElement = document.querySelector('.spinning');
+        var isSpinning = false;
+
+        function toggleSpin(element) {
+            if (!isSpinning) {
+                startSpinning();
+            } else {
+                stopSpinning();
+            }
+        }
+
+        function startSpinning() {
+            isSpinning = true;
+            spinningElement.classList.add('rotate');
+            spinningElement.style.animationPlayState = 'running';
+        }
+
+        function stopSpinning() {
+            isSpinning = false;
+            spinningElement.style.animationPlayState = 'paused';
+        }
+
+    </script>
+    <jsp:include page="footer.jsp"/>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
 </html >
