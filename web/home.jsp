@@ -76,7 +76,7 @@
             var windowHeight = window.innerHeight || document.documentElement.clientHeight;
             var windowWidth = window.innerWidth || document.documentElement.clientWidth;
 
-            // Define the threshold for determining visibility
+            // Define the threshold for determining visibility //
             var threshold = 100;
 
             return (
