@@ -192,22 +192,24 @@ primary: #d54000
     }
 }
    /*spinning animation egg*/
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.spinning{
-    animation: none;
+.spinning {
+    animation: spin 20s infinite linear;
     cursor: pointer;
 }
 
-.spinning.rotate {
-    animation: spin 0.8s infinite linear;
+.accelerating {
+    animation: accelerateSpin 2s ease-in-out;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes accelerateSpin {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(720deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .btn_all{

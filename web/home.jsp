@@ -56,7 +56,7 @@
         <!--    Spin    -->
         <div class="container-sm">
             <div class="col-12 d-flex justify-content-center my-5">
-                <img class="mx-auto spinning" style="height: 10em;" src="css/media/balut.png" onclick="toggleSpin(this)" />
+                <img class="mx-auto spinning" style="height: 10em;" src="css/media/balut.png" onclick="accelerateSpin(this)" />
             </div>
         </div>
 
@@ -114,26 +114,11 @@
                     );
         }
 
-        var spinningElement = document.querySelector('.spinning');
-        var isSpinning = false;
-
-        function toggleSpin(element) {
-            if (!isSpinning) {
-                startSpinning();
-            } else {
-                stopSpinning();
-            }
-        }
-
-        function startSpinning() {
-            isSpinning = true;
-            spinningElement.classList.add('rotate');
-            spinningElement.style.animationPlayState = 'running';
-        }
-
-        function stopSpinning() {
-            isSpinning = false;
-            spinningElement.style.animationPlayState = 'paused';
+        function accelerateSpin(element) {
+            element.classList.add('accelerating');
+            setTimeout(function () {
+                element.classList.remove('accelerating');
+            }, 2000); // Adjust the duration (in milliseconds) of acceleration here
         }
 
     </script>
