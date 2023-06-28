@@ -59,7 +59,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
 
-                    <form class="container" method="post" onsubmit="return prdformValidation()" action="${pageContext.request.contextPath}/products">
+                    <form class="container" method="post" onsubmit="return prdformValidation()" action="${pageContext.request.contextPath}/products/add">
                         <div class="modal-header">
                             <h1 class="modal-title fs-5" id="prdformModalLabel">Product Form</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

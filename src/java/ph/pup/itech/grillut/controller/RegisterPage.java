@@ -18,10 +18,14 @@ public class RegisterPage extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            registerUser(request, response);
-        } catch (IOException | ServletException Report) {
-            showForm(request, response);
+        String action = request.getServletPath();
+        switch (action) {
+            case "/customer/registration/add":
+                registerUser(request, response);
+                break;
+            default:
+                showForm(request, response);
+                break;
         }
     }
 
@@ -41,14 +45,6 @@ public class RegisterPage extends HttpServlet {
         String registerAddress = request.getParameter("registerAddress");
         String registerBirthday = request.getParameter("registerBirthday");
         String registerNumber = request.getParameter("registerNumber");
-
-        //Check if null
-        if (registerFirstName == null) {
-            System.out.println("Error");
-            throw new IOException("Null form");
-        } else {
-            System.out.println("Success!");
-        }
 
         RegisterModel customer = new RegisterModel(
                 registerFirstName, registerMiddleName, registerLastName, registerUsername, registerPassword, registerAddress, registerBirthday, registerNumber);

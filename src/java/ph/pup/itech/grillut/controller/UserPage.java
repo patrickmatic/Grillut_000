@@ -18,12 +18,15 @@ public class UserPage extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            getProduct(request, response);
-        } catch (IOException | ServletException Report) {
-            showForm(request, response);
+        String action = request.getServletPath();
+        switch (action) {
+            case "/user/add":
+                getUser(request, response);
+                break;
+            default:
+                showForm(request, response);
+                break;
         }
-//        getProduct(request, response);
     }
 
     @Override
@@ -32,20 +35,13 @@ public class UserPage extends HttpServlet {
         doGet(request, response);
     }
 
-    private void getProduct(HttpServletRequest request, HttpServletResponse response)
+    private void getUser(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String userID = request.getParameter("userID");
         String userFirstName = request.getParameter("userFN");
         String userMiddleName = request.getParameter("userMN");
         String userLastName = request.getParameter("userLN");
         String userRole = request.getParameter("userRole");
-
-        if (userID == null) {
-            System.out.println("Error");
-            throw new IOException("Null form");
-        } else {
-            System.out.println("Success!");
-        }
 
         UserModel user = new UserModel(
                 userID, userFirstName, userMiddleName, userLastName, userRole);

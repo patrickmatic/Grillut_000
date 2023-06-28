@@ -59,7 +59,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
 
-                    <form class="container" method="post" onsubmit="return userformValidation()" action="${pageContext.request.contextPath}/user">
+                    <form class="container" method="post" onsubmit="return userformValidation()" action="${pageContext.request.contextPath}/user/add">
                         <div class="modal-header">
                             <h1 class="modal-title fs-5" id="userformModalLabel">User Form</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

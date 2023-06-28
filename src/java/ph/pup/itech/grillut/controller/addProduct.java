@@ -18,10 +18,14 @@ public class addProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            getProduct(request, response);
-        } finally {
-            showForm(request, response);
+        String action = request.getServletPath();
+        switch (action) {
+            case "/products/add":
+                getProduct(request, response);
+                break;
+            default:
+                showForm(request, response);
+                break;
         }
     }
 

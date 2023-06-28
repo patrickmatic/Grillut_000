@@ -16,7 +16,7 @@
 
 
 
-            <form class="container" method="post" onsubmit="return rgstrformValidation()" action="${pageContext.request.contextPath}/customer/registration"> 
+            <form class="container" method="post" onsubmit="return rgstrformValidation()" action="${pageContext.request.contextPath}/customer/registration/add"> 
                 <h1 class="text-center border-bottom">SIGN UP</h1>
 
                 <!-- Name input -->
